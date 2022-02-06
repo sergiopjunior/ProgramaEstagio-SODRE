@@ -1,0 +1,40 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+<div class="row align-items-center justify-content-center" style="margin-top: 80px;">
+    <div class="col-md-4" style="background: #fff; padding: 40px;">
+        <section>
+            <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <div class="text-center mb-4">
+                 <a class="mb-2" href="#"><img alt="Laboratórios SODRÉ" src="/lib/sodre_logo.jpeg" width="257" class="mb-3"> </a>
+                 <h4>Programa Estágio.</h4>
+            </div>        
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Input.Email"></label>
+                <input asp-for="Input.Email" class="form-control" />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.Password"></label>
+                <input asp-for="Input.Password" class="form-control" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Input.ConfirmPassword"></label>
+                <input asp-for="Input.ConfirmPassword" class="form-control" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-block btn-primary">Cadastrar</button>
+        </form>
+        </section>       
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
